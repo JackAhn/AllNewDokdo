@@ -77,4 +77,36 @@ public class NatureActivity extends AppCompatActivity implements NatureItemClick
         v.setBackgroundResource(R.drawable.nature_img_border);
         content.setText(text);
     }
+
+    public void onClickBefore(View v){
+        int childcount = imgList.getChildCount();
+        for(int i = 0; i < childcount; i++){
+            RecyclerView.ViewHolder holder = imgList.getChildViewHolder(imgList.getChildAt(i));
+            holder.itemView.setBackgroundResource(0);
+        }
+        RecyclerView.ViewHolder holder = imgList.getChildViewHolder(imgList.getChildAt(0));
+        ImageView im = holder.itemView.findViewById(R.id.natureImg);
+        int tag = (int) im.getTag();
+        String text = MainActivity.helper.natureContent(tag);
+        Bitmap bitmap = ((BitmapDrawable)im.getDrawable()).getBitmap();
+        mainimg.setImageBitmap(bitmap);
+        holder.itemView.setBackgroundResource(R.drawable.nature_img_border);
+        content.setText(text);
+    }
+    public void onClickLast(View v){
+        int childcount = imgList.getChildCount();
+        for(int i = 0; i < childcount; i++){
+            RecyclerView.ViewHolder holder = imgList.getChildViewHolder(imgList.getChildAt(i));
+            holder.itemView.setBackgroundResource(0);
+        }
+
+        RecyclerView.ViewHolder holder = imgList.getChildViewHolder(imgList.getChildAt(childcount - 1));
+        ImageView im = holder.itemView.findViewById(R.id.natureImg);
+        int tag = (int) im.getTag();
+        String text = MainActivity.helper.natureContent(tag);
+        Bitmap bitmap = ((BitmapDrawable)im.getDrawable()).getBitmap();
+        mainimg.setImageBitmap(bitmap);
+        holder.itemView.setBackgroundResource(R.drawable.nature_img_border);
+        content.setText(text);
+    }
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="inforcombo">
+        <item>항목을 선택해주세요.</item>
+        <item></item>
+    </string-array>
+</resources>
