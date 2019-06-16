@@ -2,6 +2,8 @@
 <resources>
     <string-array name="inforcombo">
         <item>항목을 선택해주세요.</item>
-        <item></item>
+        <item>독도소개</item>
+        <item>독도캐릭터</item>
+        <item>찾아오시는 길</item>
     </string-array>
 </resources>

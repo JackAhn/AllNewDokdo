@@ -74,6 +74,7 @@ public class NatureActivity extends AppCompatActivity implements NatureItemClick
         String text = MainActivity.helper.natureContent(tag);
         Bitmap bitmap = ((BitmapDrawable)im.getDrawable()).getBitmap();
         mainimg.setImageBitmap(bitmap);
+        mainimg.setBackgroundResource(R.drawable.default_img_border);
         v.setBackgroundResource(R.drawable.nature_img_border);
         content.setText(text);
     }
