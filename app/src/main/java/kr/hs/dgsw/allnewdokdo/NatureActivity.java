@@ -85,6 +85,7 @@ public class NatureActivity extends AppCompatActivity implements NatureItemClick
             RecyclerView.ViewHolder holder = imgList.getChildViewHolder(imgList.getChildAt(i));
             holder.itemView.setBackgroundResource(0);
         }
+        Log.i("nature", imgList.getChildCount()+"");
         RecyclerView.ViewHolder holder = imgList.getChildViewHolder(imgList.getChildAt(0));
         ImageView im = holder.itemView.findViewById(R.id.natureImg);
         int tag = (int) im.getTag();

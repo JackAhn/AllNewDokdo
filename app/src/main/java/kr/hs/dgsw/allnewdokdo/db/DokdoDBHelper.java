@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
@@ -23,7 +24,7 @@ public class DokdoDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "drop table dokdo";
+        String sql = "drop table if exists dokdo";
         db.execSQL(sql);
         onCreate(db);
     }
@@ -77,5 +78,16 @@ public class DokdoDBHelper extends SQLiteOpenHelper {
             return false;
         }
         return true;
+    }
+
+    public void createDB(){
+        SQLiteDatabase db = getReadableDatabase();
+        String sql = "create table dokdo ( sequenceNumber integer primary key autoincrement, kind text, imgno integer, content text )";
+        db.execSQL(sql);
+    }
+
+    public void resetDB(){
+        SQLiteDatabase db = getReadableDatabase();
+        db.execSQL("drop table if exists dokdo");
     }
 }
